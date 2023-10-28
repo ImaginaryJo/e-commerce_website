@@ -2,10 +2,12 @@
 // Include database connection
 require 'database_connection/db_config.php';
 require 'database_connection/db_connect.php';
+include 'navbar.php';
 
 // Fetch all unique product types
 $sqlTypes = "SELECT DISTINCT productType FROM products";
 $resultTypes = $conn->query($sqlTypes);
+
 
 // Fetch products based on filter
 $productTypeFilter = isset($_POST['productType']) ? $_POST['productType'] : '';
